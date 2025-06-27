@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/principalback"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/imageCircle"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="35dp"
+            android:visibility="visible"
+            app:srcCompat="@drawable/circleshape" />
+
+        <ImageView
+            android:id="@+id/imageLogo"
+            android:layout_width="wrap_content"
+            android:layout_height="300dp"
+            android:layout_marginTop="-30dp"
+            app:srcCompat="@drawable/logomrj" />
+
+    </FrameLayout>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="221dp"
+        android:layout_margin="30dp"
+        android:layout_marginTop="600dp"
+        android:background="@drawable/custom_edittextwhite"
+        app:cardCornerRadius="30dp"
+        app:cardMaxElevation="20dp">
+
+
+        <TextView
+            android:id="@+id/textInicio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Inicio de Sesión"
+            android:textAlignment="center"
+            android:textColor="#73c6b6"
+            android:textSize="28dp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/editTextUsuario"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/custom_edittext"
+            android:drawableLeft="@drawable/baseline_person_24"
+            android:drawablePadding="8dp"
+            android:ems="10"
+            android:hint="Usuario"
+            android:inputType="text"
+            android:paddingLeft="20dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/cardview_dark_background" />
+
+        <EditText
+            android:id="@+id/editTextPassword"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="100dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/custom_edittext"
+            android:drawableLeft="@drawable/outline_contact_emergency_24"
+            android:drawablePadding="8dp"
+            android:ems="10"
+            android:hint="Contraseña"
+            android:inputType="textPassword"
+            android:paddingLeft="20dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/cardview_dark_background" />
+
+        <Button
+            android:id="@+id/buttonIniciar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="165dp"
+            android:layout_marginRight="20dp"
+            android:backgroundTint="#73c6b6"
+            android:text="Iniciar Sesión"
+            android:textColorLink="#a2d9ce"
+            android:textSize="16sp"
+            app:cornerRadius="20dp" />
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/textPregunta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="¿Estas Registrado?"
+        android:textAlignment="center"
+        android:textColor="#73c6b6"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/textRegistarte"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Registrate"
+        android:textAlignment="center"
+        android:textColor="#73c6b6"
+        android:textSize="21dp"
+        android:textStyle="bold" />
+
+
+</LinearLayout>
+
