@@ -7,13 +7,17 @@ import android.widget.EditText
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import com.example.proyecto_final.Product.Product
 import com.example.proyecto_final.Product.ProductAdapter
+import com.example.proyecto_final.Product.ProductDBHelper
 import com.example.proyecto_final.Utils.AlertUtils
+import com.example.proyecto_final.Utils.DataDumpUtils
 import com.example.proyecto_final.user.UserDBHelper
 
 class MainActivity : AppCompatActivity() {
 
     val dialogUtis = AlertUtils(this)
+    val dataDumpFake = DataDumpUtils(this)
     val userDBHelper = UserDBHelper(this)
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,11 +36,12 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        dataDumpFake.validateAndCreateProductos(this);
     }
 
     private fun listenerBtnInicioSesion() {
 
-        val intent = Intent(this,ProductAdapter::class.java)
+        val intent = Intent(this,MenuPrincipalActivity::class.java)
         startActivity(intent)
 
         val usuario = findViewById<EditText>(R.id.editTextUsuario)
