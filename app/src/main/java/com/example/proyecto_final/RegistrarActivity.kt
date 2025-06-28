@@ -6,6 +6,7 @@ import android.os.Handler
 import android.os.Looper
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.example.proyecto_final.Client.Client
@@ -30,6 +31,13 @@ class RegistrarActivity : AppCompatActivity() {
         btnRegistrar.setOnClickListener{
             listenerBtnRegistrar()
         }
+
+        val btnIniciarSesion = findViewById<TextView>(R.id.textIniciarSesion)
+        btnIniciarSesion.setOnClickListener{
+            val intent = Intent(this,MainActivity::class.java)
+            startActivity(intent)
+        }
+
     }
 
     private fun listenerBtnRegistrar() {
@@ -61,7 +69,7 @@ class RegistrarActivity : AppCompatActivity() {
 
         val listResult = userDBHelper.getUserByUsername(email.text.toString())
 
-        if(listResult.size > 0){
+        if(listResult.isNotEmpty()){
             dialogUtis.mostrarDialogo("Error", "El usuario ingresado ya se encuentra registrado. Por favor seleccionar Recuperar Contraseña o Ingresar otro Correo")
             return
         }
