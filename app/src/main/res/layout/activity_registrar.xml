@@ -37,7 +37,7 @@
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/txtnomapellidos"
+                android:id="@+id/txtNombres"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="20dp"
@@ -45,14 +45,29 @@
                 android:drawableLeft="@drawable/baseline_person_24"
                 android:drawablePadding="8dp"
                 android:ems="10"
-                android:hint="Nombre y Apellidos"
+                android:hint="Nombres"
                 android:inputType="text|textPersonName"
                 android:padding="8dp"
                 android:textColor="@color/black"
                 android:textColorHighlight="@color/cardview_dark_background" />
 
             <EditText
-                android:id="@+id/txtemail"
+                android:id="@+id/txtApellidos"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/custom_edittext"
+                android:drawableLeft="@drawable/baseline_person_24"
+                android:drawablePadding="8dp"
+                android:ems="10"
+                android:hint="Apellidos"
+                android:inputType="text|textPersonName"
+                android:padding="8dp"
+                android:textColor="@color/black"
+                android:textColorHighlight="@color/cardview_dark_background" />
+
+            <EditText
+                android:id="@+id/txtEmail"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="20dp"
@@ -67,7 +82,7 @@
                 android:textColorHighlight="@color/cardview_dark_background" />
 
             <EditText
-                android:id="@+id/txttelefono"
+                android:id="@+id/txtTelefono"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="20dp"
@@ -81,24 +96,9 @@
                 android:textColor="@color/black"
                 android:textColorHighlight="@color/cardview_dark_background" />
 
-            <EditText
-                android:id="@+id/txtusuario"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/custom_edittext"
-                android:drawableLeft="@drawable/baseline_person_24"
-                android:drawablePadding="8dp"
-                android:ems="10"
-                android:hint="Usuario"
-                android:inputType="text"
-                android:padding="8dp"
-                android:textColor="@color/black"
-                android:textColorHighlight="@color/cardview_dark_background" />
-
 
             <EditText
-                android:id="@+id/txtclave"
+                android:id="@+id/txtClave"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="20dp"
@@ -113,8 +113,24 @@
                 android:textColor="@color/black"
                 android:textColorHighlight="@color/cardview_dark_background" />
 
+            <EditText
+                android:id="@+id/txtClaveRepeat"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/custom_edittext"
+                android:drawableLeft="@drawable/outline_contact_emergency_24"
+                android:drawablePadding="8dp"
+                android:ems="10"
+                android:hint="Repetir Contraseña"
+
+                android:inputType="textPassword"
+                android:padding="8dp"
+                android:textColor="@color/black"
+                android:textColorHighlight="@color/cardview_dark_background" />
+
             <Button
-                android:id="@+id/btnregistrar"
+                android:id="@+id/btnRegistrar"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_marginTop="30dp"
