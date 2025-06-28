@@ -1,184 +1,208 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="#FAFAFA"
-    android:orientation="vertical">
+    android:layout_height="match_parent"
+    android:background="#FAFAFA">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:background="@color/white"
-        app:navigationIcon="@drawable/baseline_menu_24"
-        app:title="" />
-
-    <androidx.appcompat.widget.LinearLayoutCompat
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="8dp">
+        android:layout_height="81dp">
 
         <ImageView
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:src="@drawable/baseline_search_24"
-            app:tint="@color/gray" />
+            android:id="@+id/imageView"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="29dp"
+            app:srcCompat="@drawable/baseline_menu_24" />
 
         <EditText
-            android:id="@+id/etBuscar"
-            android:layout_width="0dp"
-            android:layout_height="48dp"
-            android:layout_marginStart="8dp"
-            android:layout_weight="1"
+            android:id="@+id/editTexBuscar"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_marginLeft="90dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginBottom="15dp"
             android:background="@drawable/contorno"
-            android:hint="Buscar producto..."
-            android:imeOptions="actionSearch"
+            android:backgroundTint="#d6dbdf"
+            android:drawablePadding="8dp"
+            android:ems="10"
+            android:hint="BuscarProducto (L)"
             android:inputType="text"
-            android:paddingHorizontal="12dp" />
-    </androidx.appcompat.widget.LinearLayoutCompat>
+            android:paddingLeft="40dp"
+            android:textColor="@color/gray"
+            android:textColorHint="@color/cardview_dark_background"
+            android:textSize="16dp" />
+
+    </RelativeLayout>
 
     <ImageView
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:layout_gravity="center"
-        android:layout_marginVertical="16dp"
-        android:src="@drawable/casita" />
+        android:id="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="119dp"
+        app:srcCompat="@drawable/casita" />
+
+    <TextView
+        android:id="@+id/textDatosDireccion"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="15dp"
+        android:text="Datos de la Dirección:"
+        android:textColor="#566573"
+        android:textSize="19sp"
+        android:textStyle="bold" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-14dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="15dp"
+        app:cardCornerRadius="28dp"
+        app:cardElevation="10dp"
+
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_gravity="center_horizontal"
+            android:padding="10dp"
+            >
+
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/custom_editext_green"
+                android:hint="Calle / Jirón"
+                android:paddingLeft="22dp"
+                android:textColor="#566573"
+                android:textColorHint="@color/cardview_dark_background"
+                android:inputType="text"
+                android:ems="10"
+                android:textSize="15dp"
+                />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/custom_editext_green"
+                android:hint="Número"
+                android:paddingLeft="22dp"
+                android:textColor="#566573"
+                android:textColorHint="@color/cardview_dark_background"
+                android:inputType="text"
+                android:ems="10"
+                android:textSize="15dp"
+                />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/custom_editext_green"
+                android:hint="Referencia"
+                android:paddingLeft="22dp"
+                android:textColor="#566573"
+                android:textColorHint="@color/cardview_dark_background"
+                android:inputType="text"
+                android:ems="10"
+                android:textSize="15dp"
+                />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/custom_editext_green"
+                android:hint="Info. Adicional (Piso,Depto)"
+                android:paddingLeft="22dp"
+                android:textColor="#566573"
+                android:textColorHint="@color/cardview_dark_background"
+                android:inputType="text"
+                android:ems="10"
+                android:textSize="15dp"
+                />
+
+
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/buttonGuardar"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="90dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="90dp"
+        android:background="@drawable/custom_edittext_purple"
+        android:text="Guardar"
+        android:textAlignment="center"
+        android:textSize="18dp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/buttonEliminar"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="90dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="90dp"
+        android:background="@drawable/custom_edittext_red"
+        android:backgroundTint="@color/red1"
+        android:text="Eliminar"
+        android:textAlignment="center"
+        android:textSize="18dp"
+        android:textStyle="bold" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:orientation="vertical"
-        android:paddingHorizontal="16dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:text="Datos de la dirección:"
-            android:textSize="16sp"
-            android:textStyle="bold" />
-
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="12dp"
-            app:boxCornerRadiusBottomEnd="8dp"
-            app:boxCornerRadiusBottomStart="8dp"
-            app:boxCornerRadiusTopEnd="8dp"
-            app:boxStrokeColor="@color/cntr"
-            app:boxCornerRadiusTopStart="8dp">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Calle / Jirón" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="12dp"
-            app:boxCornerRadius="8dp"
-            app:boxStrokeColor="@color/cntr">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Número" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="12dp"
-            app:boxCornerRadius="8dp"
-            app:boxStrokeColor="@color/cntr">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Referencia" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            app:boxCornerRadius="8dp"
-            app:boxStrokeColor="@color/cntr">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Info. Adicional (Piso, Depto)" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.button.MaterialButton
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:layout_marginLeft="100dp"
-            android:layout_marginRight="100dp"
-            android:layout_marginBottom="18dp"
-            android:text="Guardar"
-            app:backgroundTint="#7f12d0 "
-            app:cornerRadius="24dp" />
-
-        <com.google.android.material.button.MaterialButton
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:layout_marginLeft="100dp"
-            android:layout_marginRight="100dp"
-            android:text="Eliminar"
-            app:backgroundTint="#bf2d60"
-            app:cornerRadius="24dp" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="344dp"
-        android:background="@color/white"
-        android:gravity="center"
+        android:layout_height="65dp"
         android:orientation="horizontal"
-        android:paddingHorizontal="65dp">
+        android:padding="6dp"
+        android:layout_marginTop="30dp">
+
 
         <ImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_marginRight="120dp"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:src="@drawable/casa_icono" />
+            android:id="@+id/imageCasa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/casa" />
 
-        <View
-            android:layout_width="0dp"
-            android:layout_height="0dp"
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_weight="1" />
 
         <ImageView
-            android:layout_width="90dp"
-            android:layout_height="90dp"
-            android:layout_marginLeft="80dp"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:src="@drawable/carrito_compra" />
-
-        <View
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_weight="1" />
+            android:id="@+id/imageCarrito"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/carrito" />
 
         <ImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_marginLeft="50dp"
-            android:src="@drawable/gato_circular" />
-
+            android:id="@+id/imageCat"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/cat1" />
 
     </LinearLayout>
+
 
 </LinearLayout>
