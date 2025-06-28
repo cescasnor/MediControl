@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Proyecto_final</string>
+    <string name="def_message_tamano_product">No se encontró tamaño del Producto</string>
+    <string name="def_message_name_product">No se encontró nombre del Producto</string>
+    <string name="def_message_description_product">No se encontró descripción del Producto</string>
+    <string name="def_message_price_product">No se encontró Precio del Producto</string>
 </resources>

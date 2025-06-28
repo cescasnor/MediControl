@@ -7,14 +7,13 @@ import android.widget.EditText
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import com.example.proyecto_final.Client.ClientDBHelper
+import com.example.proyecto_final.Product.ProductAdapter
 import com.example.proyecto_final.Utils.AlertUtils
 import com.example.proyecto_final.user.UserDBHelper
 
 class MainActivity : AppCompatActivity() {
 
     val dialogUtis = AlertUtils(this)
-    val clientDBHelper = ClientDBHelper(this)
     val userDBHelper = UserDBHelper(this)
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,6 +35,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun listenerBtnInicioSesion() {
+
+        val intent = Intent(this,ProductAdapter::class.java)
+        startActivity(intent)
+
         val usuario = findViewById<EditText>(R.id.editTextUsuario)
         val password = findViewById<EditText>(R.id.editTextPassword)
 
@@ -55,7 +58,6 @@ class MainActivity : AppCompatActivity() {
             dialogUtis.mostrarDialogo("Error de Autenticación", "La constraseña ingresada es incorrecta.")
             return
         }
-
 
     }
 
