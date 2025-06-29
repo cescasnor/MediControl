@@ -108,7 +108,6 @@ class MenuPrincipalActivity : AppCompatActivity(), OnProductClickListener  {
     }
 
     override fun onProductAddClick(product: Product) {
-        println("Productio Agregado -> " + product);
 
         var userFounded = getUserLoged();
 

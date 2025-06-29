@@ -8,7 +8,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.proyecto_final.R
 
-class ProductCompactAdapter(private val lista: List<Product>,private val quantityProd : Int, private val listener: OnProductCompactClickListener) : RecyclerView.Adapter<ProductCompactAdapter.ProductCompactViewHolder>() {
+class ProductCompactAdapter(private val lista: List<Product>,private val quantityProdMap : MutableMap<Int, Int>, private val listener: OnProductCompactClickListener) : RecyclerView.Adapter<ProductCompactAdapter.ProductCompactViewHolder>() {
 
     class ProductCompactViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val btnAddProd: TextView = itemView.findViewById(R.id.txtAddProducto)
@@ -32,7 +32,7 @@ class ProductCompactAdapter(private val lista: List<Product>,private val quantit
         holder.name.text = producto.name
         holder.sizeProduct.text =  producto.sizeProduct
         holder.precio.text = producto.price.toString()
-        holder.txtNumberProds.text = quantityProd.toString()
+        holder.txtNumberProds.text = quantityProdMap[producto.idProduct].toString()
         holder.image.setImageResource(producto.image)
 
         holder.btnAddProd.setOnClickListener {
