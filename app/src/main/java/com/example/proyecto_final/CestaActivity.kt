@@ -60,7 +60,7 @@ class CestaActivity : AppCompatActivity(), OnProductCompactClickListener {
 
         val imageCat = findViewById<ImageView>(R.id.imageCat)
         imageCat.setOnClickListener{
-            val intent = Intent(this,MenuPrincipalActivity::class.java)
+            val intent = Intent(this,CuentaActivity::class.java)
             startActivity(intent)
         }
 

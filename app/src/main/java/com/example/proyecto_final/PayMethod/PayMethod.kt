@@ -6,11 +6,10 @@ import java.time.LocalDateTime
 
 data class PayMethod (
     var idPayMethod: Int = 0,
-    var idClient: Client,
-    var calle: String,
+    var idClient: Int ,
     var number: String,
-    var reference: String,
-    var aditionalInfo: String,
+    var ccv: String,
+    var ownerName: String,
     var endDate: LocalDate,
     var createdDate: LocalDateTime,
     var lastModifiedDate: LocalDateTime

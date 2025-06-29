@@ -8,281 +8,176 @@
     android:background="#FAFAFA">
 
 
-<RelativeLayout
-android:layout_width="match_parent"
-android:layout_height="81dp">
-
-<ImageView
-    android:id="@+id/imageView"
-    android:layout_width="35dp"
-    android:layout_height="35dp"
-    android:layout_marginLeft="20dp"
-    android:layout_marginTop="29dp"
-    app:srcCompat="@drawable/baseline_menu_24" />
-
-<EditText
-    android:id="@+id/editTexBuscar"
-    android:layout_width="match_parent"
-    android:layout_height="480dp"
-    android:layout_marginLeft="90dp"
-    android:layout_marginTop="29dp"
-    android:layout_marginRight="40dp"
-    android:layout_marginBottom="15dp"
-    android:background="@drawable/contorno"
-    android:backgroundTint="#d6dbdf"
-    android:drawablePadding="8dp"
-    android:ems="10"
-    android:hint="BuscarProducto (L)"
-    android:inputType="text"
-    android:paddingLeft="40dp"
-    android:textColor="@color/gray"
-    android:textColorHint="@color/cardview_dark_background"
-    android:textSize="16dp" />
-
-</RelativeLayout>
-
-    <LinearLayout
+    <include
+        android:id="@+id/header"
+        layout="@layout/header"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="vertical">
+        android:layout_height="wrap_content" />
 
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        app:srcCompat="@drawable/cat1" />
-
-    <TextView
-        android:id="@+id/textNombr"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Angela del Pilar Castro Noriega"
-        android:textAlignment="center" />
-    </LinearLayout>
-
-    <TextView
-        android:id="@+id/Direccion"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="10dp"
-        android:text="@string/direcciones"
-        android:textColor="#566573"
-        android:textSize="16sp"
-        android:textStyle="bold" />
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cvDirecciones"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="15dp"
-        app:cardCornerRadius="10dp"
-        app:cardElevation="4dp"
-        app:cardUseCompatPadding="true"
-        app:cardBackgroundColor="@android:color/white"
-        app:cardPreventCornerOverlap="true"
-        android:foreground="?attr/selectableItemBackground"
-        app:cardStrokeColor="#4CAF50"
-        app:cardStrokeWidth="1dp">
+        android:layout_height="match_parent"
+        android:layout_weight="1">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="14dp"
-            android:background="@drawable/custom_editext_green">
+            android:orientation="vertical">
 
-            <RelativeLayout
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                app:srcCompat="@drawable/cat1" />
+
+            <TextView
+                android:id="@+id/textNombreCliente"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingBottom="5dp">
+                android:text="Angela del Pilar Castro Noriega"
+                android:textAlignment="center" />
 
-                <TextView
-                    android:id="@+id/tvCasa"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="CASA:\nJr. Test 2349082 Urb Abc Lote 2."
-                    android:textColor="#34495e"
-                    android:textStyle="bold"
-                    android:textSize="14sp"
-                    android:lineSpacingExtra="2dp" />
-
-                <ImageView
-                    android:id="@+id/ivEditCasa"
-                    android:layout_width="28dp"
-                    android:layout_height="28dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginStart="8dp"
-                    android:background="@drawable/boton_redondo"
-                    android:contentDescription="@string/editar"
-                    app:srcCompat="@drawable/lapiz" />
-            </RelativeLayout>
-
-
-            <RelativeLayout
+            <TextView
+                android:id="@+id/Direccion"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingBottom="12dp"
-                android:layout_marginTop="10dp">
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="10dp"
+                android:text="@string/direcciones"
+                android:textColor="#566573"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
-                <TextView
-                    android:id="@+id/tvTrabajo"
-                    android:layout_width="wrap_content"
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvDirecciones"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:foreground="?attr/selectableItemBackground"
+                app:cardBackgroundColor="@android:color/white"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="4dp"
+                app:cardPreventCornerOverlap="true"
+                app:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="TRABAJO:\nJr. Test 2349082 Urb Abc Lote 2."
-                    android:textColor="#34495e"
-                    android:textStyle="bold"
-                    android:textSize="14sp"
-                    android:lineSpacingExtra="3dp" />
+                    android:background="@drawable/custom_editext_green"
+                    android:orientation="vertical"
+                    android:padding="14dp">
 
-                <ImageView
-                    android:id="@+id/ivEditTrabajo"
-                    android:layout_width="28dp"
-                    android:layout_height="28dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginStart="8dp"
-                    app:srcCompat="@drawable/lapiz"
-                    android:background="@drawable/boton_redondo"
-                    android:contentDescription="@string/editar" />
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerViewAddress"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
-            </RelativeLayout>
+            <Button
+                android:id="@+id/btnDireccion"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginHorizontal="80dp"
+                android:backgroundTint="#f39c12"
+                android:text="@string/añadir_direccion" />
+
+            <TextView
+                android:id="@+id/tvPagosTitulo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="15dp"
+                android:text="@string/metodos_pago"
+                android:textColor="#566573"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvPagos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:layout_marginTop="1dp"
+                app:cardBackgroundColor="@android:color/white"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                app:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/custom_editext_green"
+                    android:orientation="vertical"
+                    android:padding="12dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="5dp">
+
+                        <TextView
+                            android:id="@+id/tvVisa1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Visa: XXXXXXXXXXXX9302"
+                            android:textColor="#2E2E2E"
+                            android:textSize="14sp" />
+
+                        <ImageView
+                            android:id="@+id/ivCard"
+                            android:layout_width="28dp"
+                            android:layout_height="28dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginStart="8dp"
+                            android:background="@drawable/boton_redondo"
+                            android:contentDescription="@string/editar"
+                            app:srcCompat="@drawable/lapiz" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/tvVisa2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Visa: XXXXXXXXXXXX8210"
+                            android:textColor="#2E2E2E"
+                            android:textSize="15sp" />
+
+                        <ImageView
+                            android:id="@+id/ivCard1"
+                            android:layout_width="28dp"
+                            android:layout_height="28dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginStart="8dp"
+                            android:background="@drawable/boton_redondo"
+                            android:contentDescription="@string/editar"
+                            app:srcCompat="@drawable/lapiz" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <Button
+                android:id="@+id/btnAddPago"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginHorizontal="80dp"
+                android:backgroundTint="#f39c12"
+                android:text="@string/añadir_pago" />
+
         </LinearLayout>
-    </androidx.cardview.widget.CardView>
+    </ScrollView>
 
-    <Button
-        android:id="@+id/btnDireccion"
-        android:backgroundTint="#f39c12"
+    <include
+        android:id="@+id/footer"
+        layout="@layout/footer"
         android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_marginHorizontal="80dp"
-        android:text="@string/añadir_direccion" />
-
-    <TextView
-        android:id="@+id/tvPagosTitulo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="15dp"
-        android:text="@string/metodos_pago"
-        android:textColor="#566573"
-        android:textSize="16sp"
-        android:textStyle="bold" />
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cvPagos"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="15dp"
-        android:layout_marginTop="1dp"
-        app:cardCornerRadius="12dp"
-        app:cardElevation="4dp"
-        app:cardUseCompatPadding="true"
-        app:cardBackgroundColor="@android:color/white"
-        app:cardStrokeColor="#4CAF50"
-        app:cardStrokeWidth="1dp">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="12dp"
-            android:background="@drawable/custom_editext_green">
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingBottom="5dp">
-
-                <TextView
-                    android:id="@+id/tvVisa1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Visa: XXXXXXXXXXXX9302"
-                    android:textColor="#2E2E2E"
-                    android:textSize="14sp" />
-
-                <ImageView
-                    android:id="@+id/ivCard"
-                    android:layout_width="28dp"
-                    android:layout_height="28dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginStart="8dp"
-                    app:srcCompat="@drawable/lapiz"
-                    android:background="@drawable/boton_redondo"
-                    android:contentDescription="@string/editar" />
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:id="@+id/tvVisa2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Visa: XXXXXXXXXXXX8210"
-                    android:textColor="#2E2E2E"
-                    android:textSize="15sp" />
-
-                <ImageView
-                    android:id="@+id/ivCard1"
-                    android:layout_width="28dp"
-                    android:layout_height="28dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginStart="8dp"
-                    app:srcCompat="@drawable/lapiz"
-                    android:background="@drawable/boton_redondo"
-                    android:contentDescription="@string/editar" />
-
-            </RelativeLayout>
-
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
-    <Button
-        android:id="@+id/btnAddPago"
-        android:backgroundTint="#f39c12"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_marginHorizontal="80dp"
-        android:text="@string/añadir_pago" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="65dp"
-        android:orientation="horizontal"
-        android:padding="6dp"
-        android:layout_marginTop="30dp">
-
-
-        <ImageView
-            android:id="@+id/imageCasa"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/casa" />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1" />
-
-        <ImageView
-            android:id="@+id/imageCarrito"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/carrito" />
-
-        <ImageView
-            android:id="@+id/imageCat"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/cat1" />
-
-    </LinearLayout>
+        android:layout_height="wrap_content" />
 
 
 </LinearLayout>

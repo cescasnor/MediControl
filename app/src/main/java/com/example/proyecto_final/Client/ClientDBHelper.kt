@@ -5,6 +5,7 @@ import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import com.example.proyecto_final.Venta.Venta
+import com.example.proyecto_final.user.User
 import java.time.LocalDateTime
 
 class ClientDBHelper(context: Context) : SQLiteOpenHelper(context, "client.db", null, 1) {
@@ -66,6 +67,27 @@ class ClientDBHelper(context: Context) : SQLiteOpenHelper(context, "client.db", 
             put("lastModifiedDate", cliente.lastModifiedDate.toString())
         }
         return db.update("cliente", values, "idClient=?", arrayOf(cliente.idClient.toString()))
+    }
+
+    fun getClientById(idClient : Int): List<Client> {
+        val lista = mutableListOf<Client>()
+        val db = readableDatabase
+        val cursor = db.rawQuery(
+            "SELECT * FROM user WHERE idClient = ? LIMIT 1",
+            arrayOf(idClient.toString())
+        )
+        while (cursor.moveToNext()) {
+            val cliente = Client(
+                idClient = cursor.getInt(0),
+                firstName = cursor.getString(1),
+                lastName = cursor.getString(2),
+                createdDate = LocalDateTime.parse(cursor.getString(3)),
+                lastModifiedDate = LocalDateTime.parse(cursor.getString(4))
+            )
+            lista.add(cliente)
+        }
+        cursor.close()
+        return lista
     }
 
     fun eliminarCliente(idClient: Int): Int {
