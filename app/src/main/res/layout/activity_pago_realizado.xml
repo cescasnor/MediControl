@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FAFAFA">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="81dp">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="29dp"
+            app:srcCompat="@drawable/baseline_menu_24" />
+
+        <EditText
+            android:id="@+id/editTexBuscar"
+            android:layout_width="match_parent"
+            android:layout_height="480dp"
+            android:layout_marginLeft="90dp"
+            android:layout_marginTop="29dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/contorno"
+            android:backgroundTint="#d6dbdf"
+            android:drawablePadding="8dp"
+            android:ems="10"
+            android:hint="BuscarProducto (L)"
+            android:inputType="text"
+            android:paddingLeft="40dp"
+            android:textColor="@color/gray"
+            android:textColorHint="@color/cardview_dark_background"
+            android:textSize="16dp" />
+
+    </RelativeLayout>
+
+
+
+
+
+
+</LinearLayout>

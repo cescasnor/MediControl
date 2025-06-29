@@ -4,4 +4,10 @@
     <string name="def_message_name_product">No se encontró nombre del Producto</string>
     <string name="def_message_description_product">No se encontró descripción del Producto</string>
     <string name="def_message_price_product">No se encontró Precio del Producto</string>
+    <string name="editar">Editar</string>
+    <string name="añadir_direccion">Añadir Nueva Dirección</string>
+    <string name="metodos_pago">Métodos de Pago:</string>
+    <string name="añadir_pago">Añadir Método de Pago</string>
+    <string name="direcciones">Direcciones:</string>
+
 </resources>
