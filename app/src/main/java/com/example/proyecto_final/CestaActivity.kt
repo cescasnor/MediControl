@@ -10,7 +10,6 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.proyecto_final.Client.ClientDBHelper
 import com.example.proyecto_final.DetalleVenta.DetalleVenta
 import com.example.proyecto_final.DetalleVenta.DetalleVentaDBHelper
 import com.example.proyecto_final.Product.OnProductCompactClickListener
@@ -32,7 +31,6 @@ class CestaActivity : AppCompatActivity(), OnProductCompactClickListener {
     val ventaDBHelper = VentaDBHelper(this)
     val detalleVentaDBHelper = DetalleVentaDBHelper(this)
     val userDBHelper = UserDBHelper(this)
-    val clientDBHelper = ClientDBHelper(this)
     var dialogUtil = AlertUtils(this)
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -46,11 +44,9 @@ class CestaActivity : AppCompatActivity(), OnProductCompactClickListener {
         //Boton Pagar
         val btnProcederPago = findViewById<Button>(R.id.btnProcederaPagar)
         btnProcederPago.setOnClickListener{
-            var userFounded = getUserLoged();
-            var clientFounded = clientDBHelper.getClientById(userFounded.idClient)
             val intent = Intent(Intent.ACTION_SEND).apply {
                 type = "message/rfc822"
-                putExtra(Intent.EXTRA_EMAIL, arrayOf("ces.castro.noriega@gmail.com"))
+                putExtra(Intent.EXTRA_EMAIL, arrayOf("angela.castro.noriega@gmail.com"))
                 putExtra(Intent.EXTRA_SUBJECT, "Se realizó el Pago exitosamente")
                 putExtra(Intent.EXTRA_TEXT, "Comparte tu compra!")
             }
@@ -94,11 +90,9 @@ class CestaActivity : AppCompatActivity(), OnProductCompactClickListener {
         var detalleVentaFounded = detalleVentaDBHelper.getDetalleVentaByVenta(ventaFounded.get(0).idVenta)
 
         val mapProd = mutableMapOf<Int, Int>()
-        //var amountTotal : Double = 0.0
         for (detalle in detalleVentaFounded) {
             val idProd = detalle.idProducto
             val priceProd = detalle.subTotal
-            //amountTotal += priceProd
             if(mapProd.get(idProd) != null){
                 mapProd.set(idProd , (mapProd[idProd] ?: 0) + 1)
             }else{
