@@ -8,5 +8,5 @@ data class Product (
     var price: Double,
     var stock: Int = 0,
     var category: String,
-    var image: Int,
+    var image: Int
 )

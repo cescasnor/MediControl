@@ -97,4 +97,26 @@ class UserDBHelper(context: Context) : SQLiteOpenHelper(context, "user.db", null
         cursor.close()
         return lista
     }
+
+    fun getUserById(userId : Int): List<User> {
+        val lista = mutableListOf<User>()
+        val db = readableDatabase
+        val cursor = db.rawQuery(
+            "SELECT * FROM user WHERE idUser = ? LIMIT 1",
+            arrayOf(userId.toString())
+        )
+        while (cursor.moveToNext()) {
+            val user = User(
+                idUser = cursor.getInt(0),
+                idClient = cursor.getInt(1),
+                username = cursor.getString(2),
+                password = cursor.getString(3),
+                createdDate = LocalDateTime.parse(cursor.getString(4)),
+                lastModifiedDate = LocalDateTime.parse(cursor.getString(5))
+            )
+            lista.add(user)
+        }
+        cursor.close()
+        return lista
+    }
 }

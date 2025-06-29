@@ -5,7 +5,7 @@ import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 
-class ProductDBHelper(context: Context) : SQLiteOpenHelper(context, "product.db", null, 2) {
+class ProductDBHelper(context: Context) : SQLiteOpenHelper(context, "product.db", null, 3) {
 
     override fun onCreate(db: SQLiteDatabase) {
         val createTable = """
@@ -36,7 +36,7 @@ class ProductDBHelper(context: Context) : SQLiteOpenHelper(context, "product.db"
             put("description", product.description)
             put("price", product.price.toString())
             put("stock", product.stock.toString())
-            put("category", product.category.toString())
+            put("category", product.category)
             put("image", product.image)
         }
 

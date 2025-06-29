@@ -4,6 +4,7 @@ import android.content.ContentValues
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
+import com.example.proyecto_final.Venta.Venta
 import java.time.LocalDateTime
 
 class ClientDBHelper(context: Context) : SQLiteOpenHelper(context, "client.db", null, 1) {

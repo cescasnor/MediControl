@@ -7,4 +7,5 @@ data class Venta (
     var idCliente: Int,
     var fecha: LocalDateTime,
     var totalAmount: Double,
+    var status: String,
 )

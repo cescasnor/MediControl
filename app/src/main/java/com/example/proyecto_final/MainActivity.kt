@@ -1,5 +1,6 @@
 package com.example.proyecto_final
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
@@ -41,9 +42,6 @@ class MainActivity : AppCompatActivity() {
 
     private fun listenerBtnInicioSesion() {
 
-        val intent = Intent(this,MenuPrincipalActivity::class.java)
-        startActivity(intent)
-
         val usuario = findViewById<EditText>(R.id.editTextUsuario)
         val password = findViewById<EditText>(R.id.editTextPassword)
 
@@ -52,17 +50,24 @@ class MainActivity : AppCompatActivity() {
             return
         }
 
-        val listResult = userDBHelper.getUserByUsername(usuario.text.toString())
+        val listResult = userDBHelper.getUserByUsername(usuario.text.toString().uppercase())
 
         if(listResult.isEmpty()){
             dialogUtis.mostrarDialogo("Error", "El usuario ingresado no existe. Por favor proceder a registrarse")
             return
         }
 
-        if(!listResult.get(0).password.equals(password)){
+        if(!listResult.get(0).password.equals(password.text.toString())){
             dialogUtis.mostrarDialogo("Error de Autenticación", "La constraseña ingresada es incorrecta.")
             return
         }
+
+        // Guardarmos el Id del Usuario
+        val prefs = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
+        prefs.edit().putInt("userId", listResult.get(0).idUser).apply()
+
+        val intent = Intent(this,MenuPrincipalActivity::class.java)
+        startActivity(intent)
 
     }
 

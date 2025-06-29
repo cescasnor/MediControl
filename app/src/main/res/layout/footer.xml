@@ -8,11 +8,48 @@
     android:orientation="vertical">
 
 
-    <EditText
-        android:id="@+id/editTextText"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="text"
-        android:text="Name" />
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:padding="5dp">
+
+
+        <ImageView
+            android:id="@+id/imageCasa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            app:srcCompat="@drawable/casa" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2" />
+
+        <ImageView
+            android:id="@+id/imageCarrito"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            app:srcCompat="@drawable/carrito" />
+
+        <TextView
+            android:id="@+id/txtNumProdBar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2.3"
+            android:text="( 0 )"
+            android:textColor="#FF0000"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/imageCat"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            app:srcCompat="@drawable/cat1" />
+
+    </LinearLayout>
+
 </LinearLayout>

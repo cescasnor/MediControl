@@ -79,10 +79,10 @@ class DataDumpUtils(private val context: Context) {
                     name = "Dolocheck Plus 400 mg Cápsulas Blandas",
                     sizeProduct = "Blíster 10 cápsulas",
                     description = "Ibuprofeno en cápsula blanda para alivio rápido de dolor e inflamación.",
-                    price = 12.00,        // S/   :contentReference[oaicite:6]{index=6}
+                    price = 12.00,
                     stock = 80,
                     category = "Farmacia",
-                    image = R.drawable.p7_dolocheck     // p_dolocheck_plus.png
+                    image = R.drawable.p7_dolocheck
                 ),
 
                 // SALUD
@@ -90,7 +90,7 @@ class DataDumpUtils(private val context: Context) {
                     name = "Gomitas Nutricionales Arándanos 60 u",
                     sizeProduct = "Frasco 60 gomitas",
                     description = "Gomitas con antioxidantes de arándano para salud visual y bienestar general.",
-                    price = 48.90, // aprox. S/ 48.90
+                    price = 48.90,
                     stock = 50,
                     category = "Salud",
                     image = R.drawable.p8_gomas
@@ -100,7 +100,7 @@ class DataDumpUtils(private val context: Context) {
                     name = "Miositol Men Polvo Oral 14 sobres",
                     sizeProduct = "Caja 14 sobres",
                     description = "Polvo oral con mio-inositol, apoyo para la salud hormonal masculina.",
-                    price = 106.90, // aprox. S/ 106.90
+                    price = 106.90,
                     stock = 30,
                     category = "Salud",
                     image = R.drawable.p9_miositol
@@ -110,7 +110,7 @@ class DataDumpUtils(private val context: Context) {
                     name = "Ensure Advance Vainilla 220 mL",
                     sizeProduct = "Pack 15 unidades",
                     description = "Bebida nutricional completa sabor vainilla, ideal para recuperación o soporte alimenticio.",
-                    price = 196.50, // aprox. S/ 196.50
+                    price = 196.50,
                     stock = 20,
                     category = "Salud",
                     image = R.drawable.p10_ensure
@@ -120,7 +120,7 @@ class DataDumpUtils(private val context: Context) {
                     name = "Calcitriol 0.25 µg Cápsula",
                     sizeProduct = "Caja 100 cápsulas",
                     description = "Suplemento de Calcitriol para soporte de metabolismo óseo.",
-                    price = 218.00, // aprox. S/ 218.00
+                    price = 218.00,
                     stock = 15,
                     category = "Salud",
                     image = R.drawable.p11_calcitriol
@@ -130,7 +130,7 @@ class DataDumpUtils(private val context: Context) {
                     name = "Prevencel Cápsula Blanda 15 u",
                     sizeProduct = "Blíster 15 cápsulas",
                     description = "Suplemento con vitaminas y minerales para refuerzo inmunológico.",
-                    price = 35.30, // aprox. S/ 35.30
+                    price = 35.30,
                     stock = 40,
                     category = "Salud",
                     image = R.drawable.p12_prevencel
@@ -140,7 +140,7 @@ class DataDumpUtils(private val context: Context) {
                     name = "Dynamogén Solución Oral",
                     sizeProduct = "Caja x 10 ampollas",
                     description = "Solución energizante con vitaminas del complejo B para recuperación física.",
-                    price = 50.00, // aprox. S/ 50.00 (estimado)
+                    price = 50.00,
                     stock = 25,
                     category = "Salud",
                     image = R.drawable.p13_dynamogen
@@ -151,7 +151,7 @@ class DataDumpUtils(private val context: Context) {
                     name = "Aceite Intensivo Kativa Argán",
                     sizeProduct = "Pote 120 mL",
                     description = "Aceite con argán que otorga brillo natural y recupera la vitalidad del cabello. Libre de sal, sulfatos y parabenos.",
-                    price = 39.90, // aprox.
+                    price = 39.90,
                     stock = 40,
                     category = "Cuidado del cabello",
                     image = R.drawable.p14_aceite

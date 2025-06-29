@@ -84,7 +84,7 @@ class RegistrarActivity : AppCompatActivity() {
 
         val user = User(
             idClient = resultIdClient.toInt(),
-            username = email.text.toString(),
+            username = email.text.toString().uppercase(),
             password = clave.text.toString(),
             createdDate = LocalDateTime.now(),
             lastModifiedDate = LocalDateTime.now(),

@@ -8,40 +8,165 @@
     android:fitsSystemWindows="true"
     tools:context=".MenuPrincipalActivity">
 
-    <!-- CABECERA -->
-    <include
-        android:id="@+id/header"
-        layout="@layout/header"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        app:layout_constraintTop_toTopOf="parent" />
 
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="50dp"
-        app:layout_constraintTop_toTopOf="parent">
+        android:orientation="vertical">
 
-        <LinearLayout
+        <!-- CABECERA -->
+        <include
+            android:id="@+id/header"
+            layout="@layout/header" />
+
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="match_parent"
+            android:layout_weight="1">
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerViewProds"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-        </LinearLayout>
-    </ScrollView>
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="40dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginRight="40dp"
+                                app:cardBackgroundColor="#FFAB40"
+                                app:cardCornerRadius="20dp">
+
+                                <TextView
+                                    android:id="@+id/textViewFarmacia"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="4dp"
+                                    android:layout_marginBottom="4dp"
+                                    android:fontFamily="sans-serif-black"
+                                    android:text="FARMACIA"
+                                    android:textAlignment="center"
+                                    android:textColor="#FFFFFF" />
+                            </androidx.cardview.widget.CardView>
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/recyclerViewProdsFarmacia"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent" />
+                        </LinearLayout>
+                    </ScrollView>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="40dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginRight="40dp"
+                                app:cardBackgroundColor="#FFAB40"
+                                app:cardCornerRadius="20dp">
+
+                                <TextView
+                                    android:id="@+id/textViewSalud"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="4dp"
+                                    android:layout_marginBottom="4dp"
+                                    android:fontFamily="sans-serif-black"
+                                    android:text="SALUD"
+                                    android:textAlignment="center"
+                                    android:textColor="#FFFFFF" />
+                            </androidx.cardview.widget.CardView>
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/recyclerViewProdsSalud"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent" />
+
+                        </LinearLayout>
+                    </ScrollView>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="40dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginRight="40dp"
+                                app:cardBackgroundColor="#FFAB40"
+                                app:cardCornerRadius="20dp">
+
+                                <TextView
+                                    android:id="@+id/textViewCuidado"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="4dp"
+                                    android:layout_marginBottom="4dp"
+                                    android:fontFamily="sans-serif-black"
+                                    android:text="CUIDADO PERSONAL"
+                                    android:textAlignment="center"
+                                    android:textColor="#FFFFFF" />
+                            </androidx.cardview.widget.CardView>
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/recyclerViewProdsCabello"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent" />
+                        </LinearLayout>
+                    </ScrollView>
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+        </ScrollView>
+
+        <include
+            android:id="@+id/footer"
+            layout="@layout/footer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
 
     <!-- FOOTER FIJO -->
-    <include
-        android:id="@+id/footer"
-        layout="@layout/footer"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
