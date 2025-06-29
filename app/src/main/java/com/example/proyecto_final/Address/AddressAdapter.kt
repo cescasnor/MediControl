@@ -11,7 +11,8 @@ import com.example.proyecto_final.R
 class AddressAdapter(private val lista: List<Address>, private val listener: OnAddressClickListener) : RecyclerView.Adapter<AddressAdapter.AddressViewHolder>() {
 
     class AddressViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val btnEditarDireccion: ImageView = itemView.findViewById(R.id.ivEditCasa)
+        val btnEditarDireccion: ImageView = itemView.findViewById(R.id.ivEdit)
+        val btnEliminarDireccion: ImageView = itemView.findViewById(R.id.ivDelete)
         val name: TextView = itemView.findViewById(R.id.txtNameAddress)
         val description: TextView = itemView.findViewById(R.id.txtDescriptionAddress)
         val aditionalInfo: TextView = itemView.findViewById(R.id.txtAditionalInfoAddress)
@@ -33,6 +34,9 @@ class AddressAdapter(private val lista: List<Address>, private val listener: OnA
 
         holder.btnEditarDireccion.setOnClickListener {
             listener.onAddressEditClick(direccion)
+        }
+        holder.btnEliminarDireccion.setOnClickListener {
+            listener.onAddressDeleteClick(direccion)
         }
     }
 

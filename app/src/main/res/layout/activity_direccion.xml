@@ -7,202 +7,141 @@
     android:layout_height="match_parent"
     android:background="#FAFAFA">
 
-    <RelativeLayout
+    <include
+        android:id="@+id/header"
+        layout="@layout/header"
         android:layout_width="match_parent"
-        android:layout_height="81dp">
+        android:layout_height="wrap_content" />
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="29dp"
-            app:srcCompat="@drawable/baseline_menu_24" />
-
-        <EditText
-            android:id="@+id/editTexBuscar"
-            android:layout_width="match_parent"
-            android:layout_height="300dp"
-            android:layout_marginLeft="90dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginRight="40dp"
-            android:layout_marginBottom="15dp"
-            android:background="@drawable/contorno"
-            android:backgroundTint="#d6dbdf"
-            android:drawablePadding="8dp"
-            android:ems="10"
-            android:hint="BuscarProducto (L)"
-            android:inputType="text"
-            android:paddingLeft="40dp"
-            android:textColor="@color/gray"
-            android:textColorHint="@color/cardview_dark_background"
-            android:textSize="16dp" />
-
-    </RelativeLayout>
-
-    <ImageView
-        android:id="@+id/imageView2"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="119dp"
-        app:srcCompat="@drawable/casita" />
-
-    <TextView
-        android:id="@+id/textDatosDireccion"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_marginLeft="25dp"
-        android:layout_marginTop="15dp"
-        android:text="Datos de la Dirección:"
-        android:textColor="#566573"
-        android:textSize="19sp"
-        android:textStyle="bold" />
-
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="-14dp"
-        android:layout_marginRight="15dp"
-        android:layout_marginLeft="15dp"
-        app:cardCornerRadius="28dp"
-        app:cardElevation="10dp"
-
-        >
+        android:layout_height="match_parent"
+        android:layout_weight="1">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginRight="15dp"
-            android:layout_marginLeft="15dp"
-            android:layout_gravity="center_horizontal"
-            android:padding="10dp"
-            >
+            android:orientation="vertical" >
 
-
-            <EditText
+            <ImageView
+                android:id="@+id/imageView2"
                 android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:layout_marginTop="4dp"
-                android:background="@drawable/custom_editext_green"
-                android:hint="Calle / Jirón"
-                android:paddingLeft="22dp"
-                android:textColor="#566573"
-                android:textColorHint="@color/cardview_dark_background"
-                android:inputType="text"
-                android:ems="10"
-                android:textSize="15dp"
-                />
+                android:layout_height="119dp"
+                app:srcCompat="@drawable/casita" />
 
-            <EditText
+            <TextView
+                android:id="@+id/textDatosDireccion"
                 android:layout_width="match_parent"
-                android:layout_height="45dp"
+                android:layout_height="48dp"
+                android:layout_marginLeft="25dp"
                 android:layout_marginTop="15dp"
-                android:background="@drawable/custom_editext_green"
-                android:hint="Número"
-                android:paddingLeft="22dp"
+                android:text="Datos de la Dirección:"
                 android:textColor="#566573"
-                android:textColorHint="@color/cardview_dark_background"
-                android:inputType="text"
-                android:ems="10"
-                android:textSize="15dp"
-                />
+                android:textSize="19sp"
+                android:textStyle="bold" />
 
-            <EditText
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:layout_marginTop="15dp"
-                android:background="@drawable/custom_editext_green"
-                android:hint="Referencia"
-                android:paddingLeft="22dp"
-                android:textColor="#566573"
-                android:textColorHint="@color/cardview_dark_background"
-                android:inputType="text"
-                android:ems="10"
-                android:textSize="15dp"
-                />
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="-14dp"
+                android:layout_marginRight="15dp"
+                app:cardCornerRadius="28dp"
 
-            <EditText
+                app:cardElevation="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+
+                    <EditText
+                        android:id="@+id/txtCalle"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:layout_marginTop="4dp"
+                        android:background="@drawable/custom_editext_green"
+                        android:editable="true"
+                        android:ems="10"
+                        android:hint="Calle / Jirón"
+                        android:inputType="text"
+                        android:paddingLeft="22dp"
+                        android:textColor="#566573"
+                        android:textColorHint="@color/cardview_dark_background"
+                        android:textSize="15dp" />
+
+                    <EditText
+                        android:id="@+id/txtNumero"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:layout_marginTop="15dp"
+                        android:background="@drawable/custom_editext_green"
+                        android:ems="10"
+                        android:hint="Número"
+                        android:inputType="text"
+                        android:paddingLeft="22dp"
+                        android:textColor="#566573"
+                        android:textColorHint="@color/cardview_dark_background"
+                        android:textSize="15dp" />
+
+                    <EditText
+                        android:id="@+id/txtReferencia"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:layout_marginTop="15dp"
+                        android:background="@drawable/custom_editext_green"
+                        android:ems="10"
+                        android:hint="Referencia"
+                        android:inputType="text"
+                        android:paddingLeft="22dp"
+                        android:textColor="#566573"
+                        android:textColorHint="@color/cardview_dark_background"
+                        android:textSize="15dp" />
+
+                    <EditText
+                        android:id="@+id/txtInfoAdicional"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/custom_editext_green"
+                        android:ems="10"
+                        android:hint="Info. Adicional (Piso,Depto)"
+                        android:inputType="text"
+                        android:paddingLeft="22dp"
+                        android:textColor="#566573"
+                        android:textColorHint="@color/cardview_dark_background"
+                        android:textSize="15dp" />
+
+
+                </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <Button
+                android:id="@+id/btnSaveAddress"
                 android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:layout_marginTop="15dp"
-                android:background="@drawable/custom_editext_green"
-                android:hint="Info. Adicional (Piso,Depto)"
-                android:paddingLeft="22dp"
-                android:textColor="#566573"
-                android:textColorHint="@color/cardview_dark_background"
-                android:inputType="text"
-                android:ems="10"
-                android:textSize="15dp"
-                />
-
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="60dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="60dp"
+                android:backgroundTint="#5AA977"
+                android:text="Guardar" />
 
         </LinearLayout>
+    </ScrollView>
 
-
-    </androidx.cardview.widget.CardView>
-
-    <Button
-        android:id="@+id/buttonGuardar"
+    <include
+        android:id="@+id/footer"
+        layout="@layout/footer"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginLeft="90dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginRight="90dp"
-        android:background="@drawable/custom_edittext_purple"
-        android:text="Guardar"
-        android:textAlignment="center"
-        android:textSize="18dp"
-        android:textStyle="bold" />
-
-    <Button
-        android:id="@+id/buttonEliminar"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginLeft="90dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginRight="90dp"
-        android:background="@drawable/custom_edittext_red"
-        android:backgroundTint="@color/red1"
-        android:text="Eliminar"
-        android:textAlignment="center"
-        android:textSize="18dp"
-        android:textStyle="bold" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="65dp"
-        android:orientation="horizontal"
-        android:padding="6dp"
-        android:layout_marginTop="30dp">
-
-
-        <ImageView
-            android:id="@+id/imageCasa"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/casa" />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1" />
-
-        <ImageView
-            android:id="@+id/imageCarrito"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/carrito" />
-
-        <ImageView
-            android:id="@+id/imageCat"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/cat1" />
-
-    </LinearLayout>
+        android:layout_height="wrap_content" />
 
 
 </LinearLayout>

@@ -4,8 +4,6 @@ import android.content.ContentValues
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
-import com.example.proyecto_final.DetalleVenta.DetalleVenta
-import com.example.proyecto_final.Venta.Venta
 import java.time.LocalDate
 import java.time.LocalDateTime
 

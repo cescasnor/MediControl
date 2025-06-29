@@ -3,12 +3,11 @@ package com.example.proyecto_final
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.proyecto_final.Client.ClientDBHelper
@@ -16,7 +15,6 @@ import com.example.proyecto_final.DetalleVenta.DetalleVenta
 import com.example.proyecto_final.DetalleVenta.DetalleVentaDBHelper
 import com.example.proyecto_final.Product.OnProductCompactClickListener
 import com.example.proyecto_final.Product.Product
-import com.example.proyecto_final.Product.ProductAdapter
 import com.example.proyecto_final.Product.ProductCompactAdapter
 import com.example.proyecto_final.Product.ProductDBHelper
 import com.example.proyecto_final.Utils.AlertUtils
@@ -30,12 +28,12 @@ class CestaActivity : AppCompatActivity(), OnProductCompactClickListener {
 
     private lateinit var recyclerView: RecyclerView
     private lateinit var productoCompactAdapter: ProductCompactAdapter
-    val dialogUtis = AlertUtils(this)
     val productDBHelper = ProductDBHelper(this)
     val ventaDBHelper = VentaDBHelper(this)
     val detalleVentaDBHelper = DetalleVentaDBHelper(this)
-    val clientDBHelper = ClientDBHelper(this)
     val userDBHelper = UserDBHelper(this)
+    val clientDBHelper = ClientDBHelper(this)
+    var dialogUtil = AlertUtils(this)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,6 +42,22 @@ class CestaActivity : AppCompatActivity(), OnProductCompactClickListener {
 
         //Ejecutamos Recycler Product
         manageDataRecyclerProduct()
+
+        //Boton Pagar
+        val btnProcederPago = findViewById<Button>(R.id.btnProcederaPagar)
+        btnProcederPago.setOnClickListener{
+            var userFounded = getUserLoged();
+            var clientFounded = clientDBHelper.getClientById(userFounded.idClient)
+            val intent = Intent(Intent.ACTION_SEND).apply {
+                type = "message/rfc822"
+                putExtra(Intent.EXTRA_EMAIL, arrayOf("ces.castro.noriega@gmail.com"))
+                putExtra(Intent.EXTRA_SUBJECT, "Se realizó el Pago exitosamente")
+                putExtra(Intent.EXTRA_TEXT, "Comparte tu compra!")
+            }
+
+            startActivity(Intent.createChooser(intent, "Enviar correo con:"))
+            dialogUtil.mostrarDialogo("Exitoso","Venta Exitosa, se envió un correo con el detalle")
+        }
 
         //Redirecciones del Footer
         val imageHouse = findViewById<ImageView>(R.id.imageCasa)
@@ -116,7 +130,6 @@ class CestaActivity : AppCompatActivity(), OnProductCompactClickListener {
     }
 
     fun buildRecyclerViewsByProduct(listaProductos: List<Product>, mapQuantityProd : MutableMap<Int, Int>,  id : Int){
-        println("listaProductos -> " + listaProductos)
         recyclerView = findViewById(id)
         recyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         productoCompactAdapter = ProductCompactAdapter(listaProductos, mapQuantityProd,this)
@@ -145,7 +158,7 @@ class CestaActivity : AppCompatActivity(), OnProductCompactClickListener {
             precioUnitario = product.price,
             subTotal = product.price
         )
-        val detalleVentaId = detalleVentaDBHelper.insertarDetalleVenta(detalleVenta)
+        detalleVentaDBHelper.insertarDetalleVenta(detalleVenta)
 
         loadNumbersProducts()
         manageDataRecyclerProduct()
@@ -189,13 +202,11 @@ class CestaActivity : AppCompatActivity(), OnProductCompactClickListener {
     }
 
     fun loadNumbersProducts(){
-        println("Loading Number Prods ::: ")
         //Obtenemos el Usuario
         var userFounded = getUserLoged()
 
         //Obtenemos la Venta guardada
         var ventaFounded = ventaDBHelper.getVentaByClient(userFounded.idClient)
-        println("Venta -> " + ventaFounded)
 
         if(!ventaFounded.isEmpty()){
             //Si la venta no es vacia obtenemos los detalles de venta

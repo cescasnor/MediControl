@@ -8,9 +8,6 @@ import android.widget.EditText
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import com.example.proyecto_final.Product.Product
-import com.example.proyecto_final.Product.ProductAdapter
-import com.example.proyecto_final.Product.ProductDBHelper
 import com.example.proyecto_final.Utils.AlertUtils
 import com.example.proyecto_final.Utils.DataDumpUtils
 import com.example.proyecto_final.user.UserDBHelper

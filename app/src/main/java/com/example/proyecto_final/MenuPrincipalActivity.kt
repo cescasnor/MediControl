@@ -3,14 +3,12 @@ package com.example.proyecto_final
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.proyecto_final.Client.Client
 import com.example.proyecto_final.Client.ClientDBHelper
 import com.example.proyecto_final.DetalleVenta.DetalleVenta
 import com.example.proyecto_final.DetalleVenta.DetalleVentaDBHelper
@@ -33,7 +31,6 @@ class MenuPrincipalActivity : AppCompatActivity(), OnProductClickListener  {
     val productDBHelper = ProductDBHelper(this)
     val ventaDBHelper = VentaDBHelper(this)
     val detalleVentaDBHelper = DetalleVentaDBHelper(this)
-    val clientDBHelper = ClientDBHelper(this)
     val userDBHelper = UserDBHelper(this)
 
     override fun onCreate(savedInstanceState: Bundle?) {

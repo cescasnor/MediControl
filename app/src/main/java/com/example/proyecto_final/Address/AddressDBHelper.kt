@@ -109,4 +109,28 @@ class AddressDBHelper(context: Context) : SQLiteOpenHelper(context, "address.db"
         cursor.close()
         return lista
     }
+
+    fun getDireccionById(idAddress : Int): List<Address> {
+        val lista = mutableListOf<Address>()
+        val db = readableDatabase
+        val cursor = db.rawQuery(
+            "SELECT * FROM address WHERE idAddress = ? ",
+            arrayOf(idAddress.toString())
+        )
+        while (cursor.moveToNext()) {
+            val address = Address(
+                idAddress = cursor.getInt(0),
+                idClient = cursor.getInt(1),
+                calle = cursor.getString(2),
+                number = cursor.getString(3),
+                reference = cursor.getString(4),
+                aditionalInfo = cursor.getString(5),
+                createdDate = LocalDateTime.parse(cursor.getString(6)),
+                lastModifiedDate = LocalDateTime.parse(cursor.getString(7))
+            )
+            lista.add(address)
+        }
+        cursor.close()
+        return lista
+    }
 }

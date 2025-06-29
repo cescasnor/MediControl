@@ -4,8 +4,6 @@ import android.content.ContentValues
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
-import com.example.proyecto_final.Venta.Venta
-import com.example.proyecto_final.user.User
 import java.time.LocalDateTime
 
 class ClientDBHelper(context: Context) : SQLiteOpenHelper(context, "client.db", null, 1) {
@@ -73,7 +71,7 @@ class ClientDBHelper(context: Context) : SQLiteOpenHelper(context, "client.db", 
         val lista = mutableListOf<Client>()
         val db = readableDatabase
         val cursor = db.rawQuery(
-            "SELECT * FROM user WHERE idClient = ? LIMIT 1",
+            "SELECT * FROM client WHERE idClient = ? LIMIT 1",
             arrayOf(idClient.toString())
         )
         while (cursor.moveToNext()) {

@@ -1,6 +1,5 @@
 package com.example.proyecto_final.PayMethod
 
-import com.example.proyecto_final.Client.Client
 import java.time.LocalDate
 import java.time.LocalDateTime
 
