@@ -66,7 +66,7 @@ class MenuPrincipalActivity : AppCompatActivity(), OnProductClickListener  {
 
         val imageCar = findViewById<ImageView>(R.id.imageCarrito)
         imageCar.setOnClickListener{
-            val intent = Intent(this,MenuPrincipalActivity::class.java)
+            val intent = Intent(this,CestaActivity::class.java)
             startActivity(intent)
         }
 
